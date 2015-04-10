@@ -18,7 +18,7 @@ test('can proxy a get request', function(t) {
         console.log('server listening on ' + port);
 
         //Generate the proxy functions attached to the router
-        var router = proxy.proxyByRoute({'/articles*' : {host:'localhost', port: port}});
+        var router = proxy.proxyByRoute([{pattern:'/articles*', host:'localhost', port: port}]);
 
         freeport(function(er, proxyPort) {
 
@@ -40,6 +40,7 @@ test('can proxy a get request', function(t) {
                         console.log(message);
                         response += message;
                     })
+
                     res.on('end', function() {
                         t.equal(response, 'hello wisconsin');
                         proxyServer.close();
@@ -60,7 +61,7 @@ test('can proxy a get request', function(t) {
 test('can manage a missing backend server', function(t) {
 
     //Generate the proxy functions attached to the router
-    var router = proxy.proxyByRoute({'/articles*' : {host:'localhost', port: 19999}});
+    var router = proxy.proxyByRoute([{pattern:'/articles*', host:'localhost', port: 19999}]);
 
     freeport(function(er, proxyPort) {
 

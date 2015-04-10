@@ -1,0 +1,34 @@
+{
+  "name": "proxy-by-routes",
+  "version": "0.0.1",
+  "description": "Simple reverse proxy using routes",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lakowske/proxy-by-routes.git"
+  },
+  "keywords": [
+    "Reverse",
+    "Proxy",
+    "Routes",
+    "Node.js",
+    "Routes",
+    "URL"
+  ],
+  "author": "Seth Lakowske",
+  "license": "BSD3",
+  "bugs": {
+    "url": "https://github.com/lakowske/proxy-by-routes/issues"
+  },
+  "homepage": "https://github.com/lakowske/proxy-by-routes",
+  "dependencies": {
+    "routes": "^2.0.0"
+  },
+  "devDependencies": {
+    "freeport": "^1.0.4",
+    "tape": "^4.0.0"
+  }
+}
